@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 function Home() {
+  console.log('Function Home, ==> params(Welcome) Line 4', 'Welcome');
   return (
     <div>
       <Head>
