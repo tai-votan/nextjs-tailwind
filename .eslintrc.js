@@ -18,7 +18,7 @@ module.exports = {
       jsx: true,
       modules: true
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
   plugins: ['react'],
@@ -36,7 +36,7 @@ module.exports = {
     'react/prop-types': 1,
     'react/jsx-uses-vars': [2],
     'react/jsx-no-undef': 'error',
-    'no-console': 1,
+    'no-console': 0,
     'no-underscore-dangle': 'off',
     'import/no-unresolved': 'off',
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],

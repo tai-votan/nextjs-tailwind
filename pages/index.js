@@ -1,14 +1,7 @@
-import Head from 'next/head';
-
 function Home() {
   console.log('Function Home, ==> params(Welcome) Line 4', 'Welcome');
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

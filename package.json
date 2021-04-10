@@ -65,7 +65,6 @@
     "next-purgecss": "4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tailwindcss": "2.1.1",
     "webpack-filter-warnings-plugin": "1.2.1"
   },
   "devDependencies": {
@@ -105,7 +104,8 @@
     "stylelint": "13.12.0",
     "stylelint-config-standard": "21.0.0",
     "stylelint-declaration-block-no-ignored-properties": "2.3.0",
-    "stylelint-order": "4.1.0"
+    "stylelint-order": "4.1.0",
+    "tailwindcss": "2.1.1"
   },
   "engines": {
     "node": ">=10.0.0"
