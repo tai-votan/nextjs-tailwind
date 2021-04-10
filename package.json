@@ -30,6 +30,30 @@
       "prettier --write"
     ]
   },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/.next/",
+      "((\\.| /)(stories|story|mock))\\.[jt]sx?$",
+      "<rootDir>/.next",
+      "<rootDir>/models",
+      "<rootDir>/services",
+      "<rootDir>/utils"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@next/bundle-analyzer": "10.1.3",
     "@zeit/next-less": "1.0.1",
@@ -82,5 +106,8 @@
     "stylelint-config-standard": "21.0.0",
     "stylelint-declaration-block-no-ignored-properties": "2.3.0",
     "stylelint-order": "4.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
