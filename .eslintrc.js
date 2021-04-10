@@ -33,10 +33,10 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton']
       }
     ],
-    'react/prop-types': 0,
+    'react/prop-types': 1,
     'react/jsx-uses-vars': [2],
     'react/jsx-no-undef': 'error',
-    'no-console': 0,
+    'no-console': 1,
     'no-underscore-dangle': 'off',
     'import/no-unresolved': 'off',
     'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
