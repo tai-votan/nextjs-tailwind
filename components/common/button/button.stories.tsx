@@ -1,100 +1,42 @@
 import { Button } from "./index";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ButtonProps } from "@storybook/components";
 
-export const ButtonDefault = () => {
-  return (
-    <>
-      <div className="flex gap-4 p-4 bg-slate-500">
-        <Button type="primary" block>
-          primary block
-        </Button>
-      </div>
-      <div className="flex">
-        <div className="flex flex-col flex-grow gap-4 p-4">
-          <div>default</div>
-          <Button type="primary">primary</Button>
-          <Button type="dashed">dashed</Button>
-          <Button type="link">link</Button>
-          <Button type="text">text</Button>
-          <Button type="default">default</Button>
-          <div className="p-4 bg-slate-500">
-            <Button block type="ghost">
-              ghost
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col flex-grow gap-4 p-4">
-          <div>disabled</div>
-          <Button disabled type="primary">
-            primary
-          </Button>
-          <Button disabled type="dashed">
-            dashed
-          </Button>
-          <Button disabled type="link">
-            link
-          </Button>
-          <Button disabled type="text">
-            text
-          </Button>
-          <Button disabled type="default">
-            default
-          </Button>
-          <div className="p-4 bg-slate-500">
-            <Button disabled block type="ghost">
-              ghost
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col flex-grow gap-4 p-4">
-          <div>danger</div>
-          <Button danger type="primary">
-            primary
-          </Button>
-          <Button danger type="dashed">
-            dashed
-          </Button>
-          <Button danger type="link">
-            link
-          </Button>
-          <Button danger type="text">
-            text
-          </Button>
-          <Button danger type="default">
-            default
-          </Button>
-          <div className="p-4 bg-slate-500">
-            <Button danger block type="ghost">
-              ghost
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col flex-grow gap-4 p-4">
-          <div>danger disabled</div>
-          <Button danger disabled type="primary">
-            primary
-          </Button>
-          <Button danger disabled type="dashed">
-            dashed
-          </Button>
-          <Button danger disabled type="link">
-            link
-          </Button>
-          <Button danger disabled type="text">
-            text
-          </Button>
-          <Button danger disabled type="default">
-            default
-          </Button>
-          <div className="p-4 bg-slate-500">
-            <Button danger disabled block type="ghost">
-              ghost
-            </Button>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+const ButtonStory = (props: ButtonProps) => <Button {...props}>{props.children}</Button>;
 
-export default { title: "Button", component: Button } as ComponentMeta<typeof Button>;
+export const ButtonControl: ComponentStory<typeof Button> = ButtonStory.bind({});
+
+export default {
+  title: "Button",
+  component: Button,
+  args: {
+    children: "button",
+  },
+  argTypes: {
+    type: {
+      options: ["primary", "dashed", "link", "text", "default"],
+      control: { type: "select" },
+      defaultValue: "default",
+    },
+    disabled: {
+      options: [true, false],
+      control: { type: "select" },
+      defaultValue: false,
+    },
+    block: {
+      options: [true, false],
+      control: { type: "select" },
+      defaultValue: false,
+    },
+    danger: {
+      options: [true, false],
+      control: { type: "select" },
+      defaultValue: false,
+    },
+    htmlType: {
+      options: ["button", "submit", "reset"],
+      control: { type: "select" },
+      defaultValue: "button",
+    },
+  },
+} as ComponentMeta<typeof Button>;

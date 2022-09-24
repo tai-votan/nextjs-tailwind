@@ -1,3 +1,3 @@
-export type KeyPrimaryColor = "text" | "background" | "border";
+export type KeyPrimaryColor = "text" | "bg" | "border";
 
 export type Locale = "vi" | "en";

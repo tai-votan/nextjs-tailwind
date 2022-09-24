@@ -6,7 +6,7 @@ export function getPrimaryColorByKey(key: KeyPrimaryColor): string {
   const { primaryColor } = defaultSettings;
   const className = {
     text: `text-${primaryColor}`,
-    background: `background-${primaryColor}`,
+    bg: `bg-${primaryColor}`,
     border: `border-${primaryColor}`,
   };
   return className[key];
@@ -35,10 +35,10 @@ export function toSlug(str: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-export const truncateWords = (str: string, number: number): string => {
+export function truncateWords(str: string, number: number): string {
   const arrayWords = stripHTML(str).trim().split(" ");
   return arrayWords.splice(0, number).join(" ") + "...";
-};
+}
 
 export function formatMoney(number: number, strLocale: Locale): string {
   const { locale, currency } = currencies[strLocale];
