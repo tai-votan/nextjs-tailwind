@@ -8,7 +8,7 @@ interface InputProps {
 }
 
 export const Input = (props: InputProps) => {
-  const { type = "text", className, ...inputProps } = props;
+  const { type, className, ...inputProps } = props;
   return (
     <input
       type={type}
@@ -16,4 +16,8 @@ export const Input = (props: InputProps) => {
       {...inputProps}
     />
   );
+};
+
+Input.defaultProps = {
+  type: "text",
 };

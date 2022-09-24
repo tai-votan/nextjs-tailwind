@@ -83,7 +83,8 @@
       { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
     ],
     //    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "testing-library/no-node-access": ["error", { "allowContainerFirstChild": true }]
   },
   "overrides": [
     // Only uses Testing Library lint rules in test files
