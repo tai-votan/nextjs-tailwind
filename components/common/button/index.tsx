@@ -2,7 +2,7 @@ import type { FC, MouseEvent, PropsWithChildren } from "react";
 import classNames from "classnames";
 import { getPrimaryColorByKey } from "@/utils/utils";
 
-interface ButtonProps {
+export interface ButtonProps {
   disabled?: boolean;
   block?: boolean;
   danger?: boolean;

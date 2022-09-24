@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { Button } from "./index";
+import { Button } from "@/components/common";
 
 describe("Button", () => {
   it("renders button", () => {

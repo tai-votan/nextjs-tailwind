@@ -1,4 +1,4 @@
-import { stripHTML, removeUnicode, toSlug, truncateWords, formatMoney, getPrimaryColorByKey } from "./utils";
+import { stripHTML, removeUnicode, toSlug, truncateWords, formatMoney, getPrimaryColorByKey } from "@/utils/utils";
 import defaultSettings from "@/config/defaultSettings";
 
 describe("Utils", () => {

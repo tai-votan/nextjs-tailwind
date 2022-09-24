@@ -1,10 +1,14 @@
-import type { HTMLInputTypeAttribute } from "react";
+import { ChangeEvent, HTMLInputTypeAttribute } from "react";
 import classNames from "classnames";
 
-interface InputProps {
+export interface InputProps {
+  disabled?: boolean;
+  id?: string;
+  maxLength?: number;
   className?: string;
   placeholder?: string;
   type?: HTMLInputTypeAttribute;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Input = (props: InputProps) => {
@@ -19,5 +23,6 @@ export const Input = (props: InputProps) => {
 };
 
 Input.defaultProps = {
+  disabled: false,
   type: "text",
 };

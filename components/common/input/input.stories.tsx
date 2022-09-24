@@ -1,14 +1,57 @@
-import { Input } from "./index";
-import { ComponentMeta } from "@storybook/react";
+import { Input, InputProps } from "./index";
+import type { FC } from "react";
 
-export const ButtonDefault = () => {
-  return (
-    <>
-      <div className="flex gap-4 p-4 bg-slate-500">
-        <Input />
-      </div>
-    </>
-  );
+const InputStory: FC<InputProps> = (props) => <Input {...props} />;
+
+export const InputControl = InputStory.bind({});
+
+export default {
+  title: "Input",
+  component: Input,
+  argTypes: {
+    disabled: {
+      options: [true, false],
+      defaultValue: false,
+    },
+    id: {
+      defaultValue: "",
+    },
+    className: {
+      defaultValue: "",
+    },
+    placeholder: {
+      defaultValue: "",
+    },
+    maxLength: {
+      defaultValue: "",
+    },
+    type: {
+      options: [
+        "button",
+        "checkbox",
+        "color",
+        "date",
+        "datetime-local",
+        "email",
+        "file",
+        "hidden",
+        "image",
+        "month",
+        "number",
+        "password",
+        "radio",
+        "range",
+        "reset",
+        "search",
+        "submit",
+        "tel",
+        "text",
+        "time",
+        "url",
+        "week",
+      ],
+      control: { type: "select" },
+      defaultValue: "text",
+    },
+  },
 };
-
-export default { title: "Input", component: Input } as ComponentMeta<typeof Input>;

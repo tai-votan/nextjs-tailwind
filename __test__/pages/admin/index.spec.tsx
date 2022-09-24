@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import Home from "./index";
+import Admin from "@/pages/admin";
 
 describe("Homepage", () => {
   it("renders page", () => {
-    const { container } = render(<Home />);
+    const { container } = render(<Admin />);
     expect(container).toMatchSnapshot();
   });
 });
