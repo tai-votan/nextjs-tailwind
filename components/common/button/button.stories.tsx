@@ -18,22 +18,36 @@ export default {
     type: {
       options: ["primary", "dashed", "link", "text", "default"],
       defaultValue: "default",
+      control: "inline-radio",
+    },
+    style: {
+      defaultValue: {},
+      control: {
+        type: "object",
+      },
+    },
+    id: {
+      defaultValue: "",
     },
     disabled: {
       options: [true, false],
       defaultValue: false,
+      control: "boolean",
     },
     block: {
       options: [true, false],
       defaultValue: false,
+      control: "boolean",
     },
     danger: {
       options: [true, false],
       defaultValue: false,
+      control: "boolean",
     },
     htmlType: {
       options: ["button", "submit", "reset"],
       defaultValue: "button",
+      control: "inline-radio",
     },
     className: {
       defaultValue: "",

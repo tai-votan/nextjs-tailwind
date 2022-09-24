@@ -1,9 +1,11 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from "react";
+import React, { ChangeEvent, HTMLInputTypeAttribute } from "react";
 import classNames from "classnames";
 
 export interface InputProps {
   disabled?: boolean;
   id?: string;
+  value?: string;
+  style?: React.CSSProperties;
   maxLength?: number;
   className?: string;
   placeholder?: string;
@@ -16,7 +18,11 @@ export const Input = (props: InputProps) => {
   return (
     <input
       type={type}
-      className={classNames("border outline-0 px-2 py-1.5 rounded w-full", className)}
+      className={classNames("border outline-0 px-2 py-1.5 rounded", className, {
+        "cursor-not-allowed": props.disabled,
+        "w-full": ["number", "password", "text"].includes(type as string),
+        "cursor-pointer": !["number", "password", "text"].includes(type as string),
+      })}
       {...inputProps}
     />
   );

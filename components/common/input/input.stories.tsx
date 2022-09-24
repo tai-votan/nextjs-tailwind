@@ -16,6 +16,15 @@ export default {
     id: {
       defaultValue: "",
     },
+    value: {
+      defaultValue: "",
+    },
+    style: {
+      defaultValue: {},
+      control: {
+        type: "object",
+      },
+    },
     className: {
       defaultValue: "",
     },
@@ -50,7 +59,7 @@ export default {
         "url",
         "week",
       ],
-      control: { type: "select" },
+      control: "inline-radio",
       defaultValue: "text",
     },
   },

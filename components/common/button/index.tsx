@@ -1,8 +1,10 @@
-import type { FC, MouseEvent, PropsWithChildren } from "react";
+import React, { FC, MouseEvent, PropsWithChildren } from "react";
 import classNames from "classnames";
 
 export interface ButtonProps {
   disabled?: boolean;
+  id?: string;
+  style?: React.CSSProperties;
   block?: boolean;
   danger?: boolean;
   className?: string;
@@ -27,18 +29,19 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
     <button
       type={htmlType}
       disabled={disabled}
-      className={classNames("px-6 py-1.5 border rounded transition-all duration-300", className, {
+      className={classNames("px-6 py-1.5 border rounded transition-all duration-300 hover:opacity-80", className, {
         "w-full": block,
         "disabled:text-slate-400 cursor-not-allowed": disabled,
 
         // primary button
         "text-white": isPrimary && !disabled,
-        "border-orange-400 bg-orange-400 hover:opacity-80": isPrimary && unlessDangerAndDisabled,
-        "bg-rose-600 border-rose-600 hover:opacity-80": isPrimary && IsDangerAndDisabled,
+        "border-orange-400 bg-orange-400": isPrimary && unlessDangerAndDisabled,
+        "bg-rose-600 border-rose-600": isPrimary && IsDangerAndDisabled,
 
         // dashed button
+        "bg-white": isDefaultOrDashed,
         "border-dashed": isDashed,
-        "text-rose-600 border-rose-600 hover:opacity-80": isDefaultOrDashed && IsDangerAndDisabled,
+        "text-rose-600 border-rose-600": isDefaultOrDashed && IsDangerAndDisabled,
         "hover:text-orange-400 hover:border-orange-400": isDefaultOrDashed && unlessDangerAndDisabled,
 
         // text/link button

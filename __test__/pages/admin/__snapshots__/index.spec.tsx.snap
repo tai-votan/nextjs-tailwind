@@ -15,17 +15,17 @@ exports[`Homepage renders page 1`] = `
         common:login.title
       </div>
       <input
-        class="border outline-0 px-2 py-1.5 rounded w-full mb-3"
+        class="border outline-0 px-2 py-1.5 rounded mb-3 w-full"
         placeholder="common:login.username"
         type="text"
       />
       <input
-        class="border outline-0 px-2 py-1.5 rounded w-full mb-3"
+        class="border outline-0 px-2 py-1.5 rounded mb-3 w-full"
         placeholder="common:login.password"
         type="password"
       />
       <button
-        class="px-6 py-1.5 border rounded transition-all duration-300 w-full text-white border-orange-400 bg-orange-400 hover:opacity-80"
+        class="px-6 py-1.5 border rounded transition-all duration-300 hover:opacity-80 w-full text-white border-orange-400 bg-orange-400"
         type="button"
       >
         common:login.title
