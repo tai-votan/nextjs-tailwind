@@ -1,10 +1,9 @@
 const nextJest = require("next/jest");
 const { pathsToModuleNameMapper } = require("ts-jest");
-const { compilerOptions } = require("./tsconfig");
 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  // dir: "./",
+  dir: "./",
 });
 
 // Add any custom config to be passed to Jest
@@ -24,21 +23,26 @@ const customJestConfig = {
     "!**/components/common/index.ts",
   ],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: "<rootDir>/" }),
+  moduleNameMapper: pathsToModuleNameMapper(
+    {
+      "@/*": ["./*"],
+    },
+    { prefix: "<rootDir>/" }
+  ),
 
   // moduleNameMapper: {
   //   // Handle CSS imports (with CSS modules)
   //   // https://jestjs.io/docs/webpack#mocking-css-modules
-  //   '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+  //   "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
   //
   //   // Handle image imports
   //   // https://jestjs.io/docs/webpack#handling-static-assets
-  //   '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$': `<rootDir>/__mocks__/fileMock.js`,
+  //   "^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$": `<rootDir>/__mocks__/fileMock.js`,
   //
   //   // Handle module aliases
-  //   '^@/components/(.*)$': '<rootDir>/components/$1',
-  //   '^@/constants/(.*)$': '<rootDir>/constants/$1',
-  //   '^@/pages/(.*)$': '<rootDir>/pages/$1',
+  //   "^@/components/(.*)$": "<rootDir>/components/$1",
+  //   "^@/constants/(.*)$": "<rootDir>/constants/$1",
+  //   "^@/pages/(.*)$": "<rootDir>/pages/$1",
   // },
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
   transform: {
