@@ -1,6 +1,5 @@
 import type { FC, MouseEvent, PropsWithChildren } from "react";
 import classNames from "classnames";
-import { getPrimaryColorByKey } from "@/utils/utils";
 
 export interface ButtonProps {
   disabled?: boolean;
@@ -24,10 +23,6 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
   const unlessDangerAndDisabled = !danger && !disabled;
   const IsDangerAndDisabled = danger && !disabled;
 
-  const textPrimary = getPrimaryColorByKey("text");
-  const borderPrimary = getPrimaryColorByKey("border");
-  const bgPrimary = getPrimaryColorByKey("bg");
-
   return (
     <button
       type={htmlType}
@@ -38,13 +33,13 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
 
         // primary button
         "text-white": isPrimary && !disabled,
-        [`${borderPrimary} ${bgPrimary} hover:opacity-80`]: isPrimary && unlessDangerAndDisabled,
+        "border-orange-400 bg-orange-400 hover:opacity-80": isPrimary && unlessDangerAndDisabled,
         "bg-rose-600 border-rose-600 hover:opacity-80": isPrimary && IsDangerAndDisabled,
 
         // dashed button
         "border-dashed": isDashed,
         "text-rose-600 border-rose-600 hover:opacity-80": isDefaultOrDashed && IsDangerAndDisabled,
-        [`hover:${textPrimary} hover:${borderPrimary}`]: isDefaultOrDashed && unlessDangerAndDisabled,
+        "hover:text-orange-400 hover:border-orange-400": isDefaultOrDashed && unlessDangerAndDisabled,
 
         // text/link button
         "border-transparent": isTextOrLink,

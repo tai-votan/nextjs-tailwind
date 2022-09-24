@@ -1,16 +1,5 @@
 import { currencies } from "@/constants";
-import defaultSettings from "@/config/defaultSettings";
-import { KeyPrimaryColor, Locale } from "@/interfaces";
-
-export function getPrimaryColorByKey(key: KeyPrimaryColor): string {
-  const { primaryColor } = defaultSettings;
-  const className = {
-    text: `text-${primaryColor}`,
-    bg: `bg-${primaryColor}`,
-    border: `border-${primaryColor}`,
-  };
-  return className[key];
-}
+import { Locale } from "@/interfaces";
 
 export function stripHTML(str: string): string {
   return str

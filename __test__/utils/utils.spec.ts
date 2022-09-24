@@ -1,13 +1,7 @@
-import { stripHTML, removeUnicode, toSlug, truncateWords, formatMoney, getPrimaryColorByKey } from "@/utils/utils";
-import defaultSettings from "@/config/defaultSettings";
+import { stripHTML, removeUnicode, toSlug, truncateWords, formatMoney } from "@/utils/utils";
 
 describe("Utils", () => {
   const html = '<div class="font-medium">Nguyễn Thị Hoài Thuyên Thuyên</div>';
-
-  it("function getPrimaryColorByKey", () => {
-    const className = getPrimaryColorByKey("text");
-    expect(className).toMatch("text-" + defaultSettings.primaryColor);
-  });
 
   it("stripHTML with html", () => {
     const removeHTML = stripHTML(html);
