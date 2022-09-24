@@ -48,6 +48,12 @@ const customJestConfig = {
   },
   transformIgnorePatterns: ["/node_modules/", "^.+\\.module\\.(css|sass|scss)$"],
   testEnvironment: "jest-environment-jsdom",
+  coverageThreshold: {
+    global: {
+      statements: 90,
+      lines: 95,
+    },
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
