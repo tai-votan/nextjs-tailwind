@@ -24,6 +24,7 @@ exports[`Homepage renders page 1`] = `
         placeholder="common:login.password"
         type="password"
       />
+      common:login.password
       <button
         class="px-6 py-1.5 border rounded transition-all duration-300 hover:opacity-80 w-full text-white border-orange-400 bg-orange-400"
         type="button"

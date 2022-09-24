@@ -2,9 +2,16 @@ import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import useTranslation from "next-translate/useTranslation";
 import { Button, Input } from "@/components/common";
+import { useState } from "react";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+  const [translate, setTranslate] = useState<string>("common:login.password");
+
+  const onSubmit = () => {
+    setTranslate("common:login.username");
+  };
+
   return (
     <div
       className="flex min-h-screen flex-col items-center justify-center p-3.5 bg-no-repeat bg-center bg-cover"
@@ -40,7 +47,8 @@ const Home: NextPage = () => {
         <div className="text-4xl font-bold text-center pb-9">{t("common:login.title")}</div>
         <Input className="mb-3" placeholder={t("common:login.username")} />
         <Input className="mb-3" placeholder={t("common:login.password")} type="password" />
-        <Button type="primary" block>
+        {t(translate)}
+        <Button type="primary" block onClick={onSubmit}>
           {t("common:login.title")}
         </Button>
       </div>

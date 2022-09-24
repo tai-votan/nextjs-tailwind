@@ -2,18 +2,17 @@ import { useEffect } from "react";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import "nprogress/nprogress.css";
 
+import "nprogress/nprogress.css";
 import "../styles/globals.css";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    const handleStart = (url: string) => {
-      console.log(`Func: handleStart - PARAMS: url`, url);
-      NProgress.start();
-    };
+    NProgress.configure({ showSpinner: false });
+
+    const handleStart = () => NProgress.start();
 
     const handleStop = () => NProgress.done();
 

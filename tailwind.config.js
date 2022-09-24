@@ -10,16 +10,26 @@ module.exports = {
     plugin(function ({ addBase, theme }) {
       addBase({
         h1: {
+          fontSize: theme("fontSize.3xl"),
+          fontWeight: theme("fontWeight.bold"),
+          lineHeight: "2.25rem",
+        },
+        h2: {
           fontSize: theme("fontSize.2xl"),
           fontWeight: theme("fontWeight.bold"),
           lineHeight: "2rem",
         },
-        h2: {
+        h3: {
           fontSize: theme("fontSize.xl"),
           fontWeight: theme("fontWeight.bold"),
           lineHeight: "1.75rem",
         },
-        h3: {
+        h4: {
+          fontSize: theme("fontSize.lg"),
+          fontWeight: theme("fontWeight.bold"),
+          lineHeight: "1.75rem",
+        },
+        h5: {
           fontSize: theme("fontSize.lg"),
           fontWeight: theme("fontWeight.bold"),
           lineHeight: "1.75rem",

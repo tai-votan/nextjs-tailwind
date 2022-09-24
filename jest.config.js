@@ -23,6 +23,7 @@ const customJestConfig = {
     "!<rootDir>/redux/**",
     "!<rootDir>/components/common/index.ts",
     "!<rootDir>/pages/_app.tsx",
+    "!<rootDir>/pages/_document.tsx",
   ],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: "<rootDir>/" }),

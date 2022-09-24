@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import { NextSeo } from "next-seo";
 import Trans from "next-translate/Trans";
 
@@ -36,9 +37,9 @@ const Home: NextPage = () => {
           i18nKey="common:title"
           components={[
             <h1 key="common:title.h1" className="title" />,
-            <a key="common:title.a" href="#">
-              Next.js!
-            </a>,
+            <Link key="common:title.a" href="/admin">
+              Admin
+            </Link>,
           ]}
         />
       </main>
